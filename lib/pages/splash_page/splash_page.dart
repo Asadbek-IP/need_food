@@ -9,21 +9,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  List<Map<String,String>>? _list =[
-    {
-      'text' : "Pilih menu\nfavoritemu",
-      "image":"assets/images/fastfood1.png",
-    },
-    {
-      'text' : "Temukan\nharga terbaik",
-      "image":"assets/images/fastfood2.png",
-    },
-    {
-      'text' : "Makananmu\nsiap diantarkan ",
-      "image":"assets/images/fastfood3.png",
-    },
 
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

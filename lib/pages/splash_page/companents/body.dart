@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:need_food/constants.dart';
+import 'package:need_food/pages/login_page/login_page.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+
   int currentPage=0;
   PageController _pageController =PageController();
   List<Map<String, String>> _list = [
@@ -40,7 +42,6 @@ class _BodyState extends State<Body> {
                 onPageChanged: (value){
                   setState(() {
                     currentPage=value;
-
                   });
                 },
                 itemBuilder: (context, index) => SplashContent(
@@ -67,7 +68,11 @@ class _BodyState extends State<Body> {
                         setState(() {
                          if(_pageController.hasClients){
                            _pageController.nextPage(
-                               duration: Duration(milliseconds: 250), curve: Curves.easeInOut);
+                               duration: Duration(milliseconds: 350), curve: Curves.easeInOut);
+                         }
+                         if(currentPage==2
+                         ){
+                           Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
                          }
                         });
                       },
